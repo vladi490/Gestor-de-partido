@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Gestor de partido</title>
+	<!-- Enlace a hoja de estilos -->
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<header>
+		<h1>Gestor de partido</h1>
+	</header>
+
+	<main class="contenedor-principal">
+		<section class="Tarjeta-marcador" aria-labelledby="Titulo-marcador">
+			<h2 id="Titulo-marcador">Marcador</h2>
+
+			<div class="Marcador-A" role="region" aria-live="polite" aria-atomic="true">
+				<div class="Equipo-1" id="Equipo-a">
+					<h3>Equipo A</h3>
+					<p class="Puntuacion" id="Puntuacion-a">0</p>
+					<div class="Botones-sumas" id="Botones-a">
+						<button data-team="A" data-points="1">+1</button>
+						<button data-team="A" data-points="2">+2</button>
+						<button data-team="A" data-points="3">+3</button>
+					</div>
+				</div>
+
+				<div class="separador" aria-hidden="true"></div>
+
+				<div class="Equipo2" id="Equipo-b">
+					<h3>Equipo B</h3>
+					<p class="Puntuacion" id="Puntuacion-b">0</p>
+					<div class="Botones-sumas" id="Botones-b">
+						<button data-team="B" data-points="1">+1</button>
+						<button data-team="B" data-points="2">+2</button>
+						<button data-team="B" data-points="3">+3</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="Reset-contenedor">
+				<button id="Reset-boton" class="btn-reset">Reiniciar marcador</button>
+			</div>
+
+			<p id="Mensaje-predeterminado" class="Default" aria-live="polite">Partido sin goles aún.</p>
+		</section>
+
+		<section class="Jugadores-container" aria-labelledby="Jugadores-titulo">
+			<h2 id="Jugadores-titulo">Jugadores</h2>
+
+			<form id="Formulario-jugador" aria-describedby="ayuda-jugador">
+				<label for="Jugador-nombre">Nombre del jugador</label>
+				<div class="fila-formulario">
+					<input type="text" id="Jugador-nombre" name="nombre-jugador" autocomplete="off" />
+					<button type="submit">Añadir</button> 
+				</div>
+				<p id="No-permitir" class="Mensaje">No se permiten nombres vacíos ni duplicados.</p>
+			</form>
+
+			<div id="Facilidad-jugador" class="Warn" aria-live="polite" style="display:none"></div>
+
+			<ul id="Lista-jugadores" class="Ul-jugadores" aria-live="polite" aria-atomic="true">
+				<!-- Lista de los jugadores  -->
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>Gestor de partido para poder contar los goles muy facilmente , hecho por @Vladimir Fortes Rosa</p>
+	</footer>
+
+	<script src="Gestor.js" defer></script>
+</body>
+</html>

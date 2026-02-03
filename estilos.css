@@ -1,0 +1,149 @@
+/* Estilo general */
+
+/* Tipo de letras y fonndo */
+body {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(180deg, #f6fbff 0%, #f0f6ff 100%);
+	color: #0f1724;
+}
+
+
+header, main, footer {
+	padding: 1rem;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+header {
+	background: linear-gradient(90deg,#063a6b,#0b5fff);
+	color: #fff;
+	padding: 1rem 1rem;
+	border-bottom: 4px solid rgba(255,255,255,0.08);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Estilos del contenedor principal */
+.contenedor-principal {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+@media(min-width:700px){
+	.contenedor-principal { grid-template-columns: 1fr 380px; }
+}
+
+/* Estilo de las tarjetas */
+.Tarjeta-marcador, .Jugadores-container {
+	background: white;
+	padding: 1rem;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(10,25,47,0.06);
+	border-left: 6px solid rgba(11,95,255,0.12);
+}
+
+/* Marcador del equipo A */
+.Marcador-A {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Marcador del equipo A y B (Son lo mismo que equipo 1 y 2, solo que esos son los class , las letras de los equipos son id's ) */
+
+.Equipo-1, .Equipo2 {
+	flex: 1;
+	text-align: center;
+	padding: 0.6rem;
+	border-radius: 8px;
+	background: linear-gradient(180deg,#f8fbff,#eef6ff);
+	border: 1px solid #e6f0ff;
+}
+
+.Equipo-1 h3, .Equipo2 h3 { margin: 0.2rem 0; font-size: 1rem; letter-spacing: 0.6px; }
+
+/* Estilos de la  Puntuacion */
+
+
+.Puntuacion {
+	font-size: 2.6rem;
+	font-weight: 800;
+	margin: 0.4rem 0;
+	color: #06234a;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Botones de sumar puntos */
+.Botones-sumas { display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap; }
+
+button {
+	cursor: pointer;
+	padding: 0.5rem 0.8rem;
+	border: 0;
+	border-radius: 8px;
+	background: #0b5fff;
+	color: white;
+	font-weight: 600;
+	box-shadow: 0 6px 12px rgba(11,95,255,0.12);
+	transition: transform .08s ease, box-shadow .08s ease;
+}
+button:active { transform: translateY(1px) scale(.997); }
+button.btn-reset { background: #ef4444; }
+
+/* Lugar donde añadimos un jugador a una lista */
+.fila-formulario { display:flex; gap:0.5rem; margin-top:0.5rem; }
+input[type="text"] {
+	flex: 1;
+	padding: 0.5rem;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* Aviso al usuario (Estilos) */
+.Default { margin-top:0.5rem; padding:0.6rem; border-radius:8px; font-weight:600; }
+.Default.success { background:#ecfdf5; color:#065f46; border:1px solid #bbf7d0; }
+.Default.error { background:#fff1f2; color:#7f1d1d; border:1px solid #fecaca; }
+
+.Warn { margin-top:0.5rem; padding:0.6rem; border-radius:8px; font-weight:600; }
+.Warn.success { background:#ecfdf5; color:#065f46; border:1px solid #bbf7d0; }
+.Warn.error { background:#fff1f2; color:#7f1d1d; border:1px solid #fecaca; }
+
+/* Lista de los jugadores añadidos */
+.Ul-jugadores { list-style:none; padding:0; margin:0.5rem 0 0 0; }
+.Ul-jugadores li {
+	display:flex;
+	justify-content:space-between;
+	gap:0.5rem;
+	align-items:center;
+	padding:0.45rem 0.6rem;
+	border-bottom:1px solid #eef6ff;
+}
+
+/* Boton para eliminar al usuario ya añadido anteriormente */
+
+.Boton-eliminar {
+	background:#ef4444;
+	color:white;
+	padding:0.35rem 0.55rem;
+	border-radius:8px;
+	border:0;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/* Subtitulo , contenedor reset , separador y texto pequeño. */
+.subtitulo {
+	position:absolute!important;
+	height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap;
+}
+.contenedor-reset { display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem; }
+.separador { width:1px; background:#e6eefc; height:72px; border-radius:2px; }
+.texto-pequeño { margin-top:0.5rem; font-size:0.9rem; color:#475569; }
+
+/* Pie de pagina */
+footer { text-align:center; padding:1rem 0; color:#475569; font-size:0.95rem; }
